@@ -18,8 +18,9 @@ class LogoutResponse implements LogoutResponseContract
     public function toResponse($request)
     {
         SingleSignOnController::logout($request);
+
         return $request->wantsJson()
             ? new JsonResponse('', 204)
-            : redirect(LaravelLocalization::getCurrentLocale() . '/');
+            : redirect(LaravelLocalization::getCurrentLocale().'/');
     }
 }

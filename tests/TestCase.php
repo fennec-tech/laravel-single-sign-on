@@ -2,9 +2,9 @@
 
 namespace Fennectech\LaravelSingleSignOn\Tests;
 
+use Fennectech\LaravelSingleSignOn\LaravelSingleSignOnServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Fennectech\LaravelSingleSignOn\LaravelSingleSignOnServiceProvider;
 
 class TestCase extends Orchestra
 {

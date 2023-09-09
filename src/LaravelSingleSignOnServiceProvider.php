@@ -2,9 +2,9 @@
 
 namespace Fennectech\LaravelSingleSignOn;
 
+use Fennectech\LaravelSingleSignOn\Commands\LaravelSingleSignOnCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Fennectech\LaravelSingleSignOn\Commands\LaravelSingleSignOnCommand;
 
 class LaravelSingleSignOnServiceProvider extends PackageServiceProvider
 {

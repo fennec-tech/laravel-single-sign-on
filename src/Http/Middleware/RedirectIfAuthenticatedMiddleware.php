@@ -13,8 +13,6 @@ class RedirectIfAuthenticatedMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
      * @param  string|null  ...$guards
      * @return mixed
      */
@@ -22,9 +20,10 @@ class RedirectIfAuthenticatedMiddleware
     {
         $guards = empty($guards) ? [null] : $guards;
         $is_logged_in = SingleSignOnController::check_accounts_login($request);
-        if (!$is_logged_in) {
+        if (! $is_logged_in) {
             $intendedUrl = redirect()->intended()->getTargetUrl();
-            $redirectUrl = env('ACCOUNTS_URL') . '/login?redirect=' . urlencode($intendedUrl);
+            $redirectUrl = env('ACCOUNTS_URL').'/login?redirect='.urlencode($intendedUrl);
+
             // Redirect the user to the Accounts app
             return redirect($redirectUrl);
         }
